@@ -8,6 +8,7 @@
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
 
 void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
   bno.begin();
   bno.setExtCrystalUse(true);
@@ -26,5 +27,10 @@ void loop() {
   Serial.println("");
   
   delay(100);
+
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(500);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(500);
 
 }
